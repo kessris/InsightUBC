@@ -1,0 +1,20 @@
+{
+    "title": "filter by room name",
+    "query": {
+        "WHERE": {
+            "IS": {
+                "rooms_name": "ALRD_105"
+            }
+        },
+        "OPTIONS": {
+            "COLUMNS": [
+                "rooms_name",
+                "rooms_seats"
+            ]
+        }
+    },
+    "response": {
+        "code": 200,
+        "body": {"result":[{"rooms_name":"ALRD_105","rooms_seats":94}]}
+    }
+}

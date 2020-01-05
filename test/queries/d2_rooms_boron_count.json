@@ -1,0 +1,39 @@
+{
+    "title": "countSeat_sortDown",
+    "query": {
+        "WHERE": {
+            "GT": {
+                "rooms_seats": 84
+            }
+        },
+        "OPTIONS": {
+            "COLUMNS": [
+                "rooms_name",
+                "countSeats"
+            ],
+            "ORDER": {
+                "dir": "DOWN",
+                "keys": [
+                    "countSeats"
+                ]
+            }
+        },
+        "TRANSFORMATIONS": {
+            "GROUP": [
+                "rooms_name"
+            ],
+            "APPLY": [
+                {
+                    "countSeats": {
+                        "COUNT": "rooms_seats"
+                    }
+                }
+            ]
+        }
+    },
+    "response": {
+        "code": 200,
+        "body":
+                {"result":[{"rooms_name":"WOOD_6","countSeats":1},{"rooms_name":"WOOD_5","countSeats":1},{"rooms_name":"WOOD_4","countSeats":1},{"rooms_name":"WOOD_3","countSeats":1},{"rooms_name":"WOOD_2","countSeats":1},{"rooms_name":"WOOD_1","countSeats":1},{"rooms_name":"WESB_201","countSeats":1},{"rooms_name":"WESB_100","countSeats":1},{"rooms_name":"SWNG_222","countSeats":1},{"rooms_name":"SWNG_221","countSeats":1},{"rooms_name":"SWNG_122","countSeats":1},{"rooms_name":"SWNG_121","countSeats":1},{"rooms_name":"SRC_220C","countSeats":1},{"rooms_name":"SRC_220B","countSeats":1},{"rooms_name":"SRC_220A","countSeats":1},{"rooms_name":"SCRF_100","countSeats":1},{"rooms_name":"PHRM_1201","countSeats":1},{"rooms_name":"PHRM_1101","countSeats":1},{"rooms_name":"OSBO_A","countSeats":1},{"rooms_name":"MCML_166","countSeats":1},{"rooms_name":"MCLD_228","countSeats":1},{"rooms_name":"MCLD_202","countSeats":1},{"rooms_name":"MATX_1100","countSeats":1},{"rooms_name":"MATH_100","countSeats":1},{"rooms_name":"LSK_201","countSeats":1},{"rooms_name":"LSK_200","countSeats":1},{"rooms_name":"LSC_1003","countSeats":1},{"rooms_name":"LSC_1002","countSeats":1},{"rooms_name":"LSC_1001","countSeats":1},{"rooms_name":"LASR_104","countSeats":1},{"rooms_name":"IONA_301","countSeats":1},{"rooms_name":"IBLC_261","countSeats":1},{"rooms_name":"IBLC_182","countSeats":1},{"rooms_name":"HENN_202","countSeats":1},{"rooms_name":"HENN_201","countSeats":1},{"rooms_name":"HENN_200","countSeats":1},{"rooms_name":"HEBB_100","countSeats":1},{"rooms_name":"GEOG_200","countSeats":1},{"rooms_name":"GEOG_100","countSeats":1},{"rooms_name":"FSC_1221","countSeats":1},{"rooms_name":"FSC_1005","countSeats":1},{"rooms_name":"FRDM_153","countSeats":1},{"rooms_name":"FNH_60","countSeats":1},{"rooms_name":"ESB_1013","countSeats":1},{"rooms_name":"ESB_1012","countSeats":1},{"rooms_name":"DMP_310","countSeats":1},{"rooms_name":"DMP_110","countSeats":1},{"rooms_name":"CIRS_1250","countSeats":1},{"rooms_name":"CHEM_D300","countSeats":1},{"rooms_name":"CHEM_D200","countSeats":1},{"rooms_name":"CHEM_C126","countSeats":1},{"rooms_name":"CHEM_C124","countSeats":1},{"rooms_name":"CHEM_B250","countSeats":1},{"rooms_name":"CHEM_B150","countSeats":1},{"rooms_name":"CHBE_102","countSeats":1},{"rooms_name":"CHBE_101","countSeats":1},{"rooms_name":"CEME_1202","countSeats":1},{"rooms_name":"BUCH_A203","countSeats":1},{"rooms_name":"BUCH_A202","countSeats":1},{"rooms_name":"BUCH_A201","countSeats":1},{"rooms_name":"BUCH_A104","countSeats":1},{"rooms_name":"BUCH_A103","countSeats":1},{"rooms_name":"BUCH_A102","countSeats":1},{"rooms_name":"BUCH_A101","countSeats":1},{"rooms_name":"BIOL_2000","countSeats":1},{"rooms_name":"ANSO_207","countSeats":1},{"rooms_name":"ANGU_098","countSeats":1},{"rooms_name":"ALRD_105","countSeats":1},{"rooms_name":"AERL_120","countSeats":1}]}
+    }
+}

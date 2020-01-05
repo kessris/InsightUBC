@@ -1,0 +1,36 @@
+{
+    "title": "AVG supports only numeric",
+    "query": {
+        "WHERE": {
+            "GT": {
+                "courses_avg": 98.5
+            }
+        },
+        "OPTIONS": {
+            "COLUMNS": [
+                "courses_avg",
+                "overallAvg"
+            ],
+            "ORDER": {"dir": "UP", "keys": ["courses_avg"]}
+        },
+        "TRANSFORMATIONS": {
+            "GROUP": [
+                "courses_avg"
+            ],
+            "APPLY": [
+                {
+                    "overallAvg": {
+                        "AVG": "courses_dept"
+                    }
+                }
+            ]
+        }
+    },
+    "response": {
+        "code": 400,
+        "body": {
+            "result": [
+            ]
+        }
+    }
+}

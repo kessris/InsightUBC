@@ -1,0 +1,59 @@
+{
+    "title": "Error takes precedence over nonvalid input",
+    "query": {
+        "WHERE": {
+            "OR": [
+                {
+                    "AND":[
+                        {
+                            "GT": {
+                                "courses_avg":97
+                            }
+                        },
+                        {
+                            "IS": {
+                                "coursesdept":"aaaaa"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "GT":{
+                        "courses_fail":1000000
+                    }
+                },
+                {
+                    "GT":{
+                        "courses_fail":1000000
+                    }
+                },
+                {
+                    "LT":{
+                        "courses_audit":0
+                    }
+                },
+                {
+                    "GT":{
+                        "courses_avg": 99
+                    }
+                }
+            ]
+        },
+        "OPTIONS": {
+            "COLUMNS": [
+                "courses_dept",
+                "courses_id",
+                "courses_avg"
+            ],
+            "ORDER": "courses_avg",
+            "FORM": "TABLE"
+        }
+    },
+    "response": {
+        "code": 400,
+        "body": {
+            "error":
+                "coursesdept not a valid key"
+        }
+    }
+}

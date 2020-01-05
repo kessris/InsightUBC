@@ -1,0 +1,66 @@
+{
+    "title": "Rooms with seats < 100 invalid",
+    "query": {
+        "WHERE": {
+            "LT": {
+                "rooms_seats":100
+            }
+        },
+        "OPTIONS": {
+            "COLUMNS": [
+                "maxPass",
+                "overallAvg",
+                "courses_year",
+                "courses_dept",
+                "maxAudit",
+                "countInstructor"
+            ],
+            "ORDER": {
+                "dir": "UP",
+                "keys": [
+                    "maxPass",
+                    "overallAvg",
+                    "courses_year",
+                    "courses_dept",
+                    "maxAudit",
+                    "countInstructor"
+                ]
+            }
+        },
+        "TRANSFORMATIONS": {
+            "GROUP": [
+                "courses_dept",
+                "courses_year"
+            ],
+            "APPLY": [
+                {
+                    "overallAvg": {
+                        "AVG": "courses_avg"
+                    }
+                },
+                {
+                    "maxPass": {
+                        "MAX": "courses_pass"
+                    }
+                },
+                {
+                    "maxAudit": {
+                        "MAX": "courses_audit"
+                    }
+                },
+                {
+                    "countInstructor": {
+                        "COUNT": "courses_instructor"
+                    }
+                }
+            ]
+        }
+    },
+    "response": {
+        "code": 400,
+        "body": {
+            "result": [
+            ]
+        }
+    }
+}

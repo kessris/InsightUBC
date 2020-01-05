@@ -1,0 +1,20 @@
+{
+    "title": "d2_rooms_yr",
+    "query": {
+        "WHERE": {
+            "LT": {
+                "courses_year": 1900
+            }
+        },
+        "OPTIONS": {
+            "COLUMNS": [
+                "courses_id"
+            ]
+        }
+    },
+    "response": {
+        "code": 200,
+        "body": {
+            "result": []}
+    }
+}

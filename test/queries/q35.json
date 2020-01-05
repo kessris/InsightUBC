@@ -1,0 +1,22 @@
+{
+    "title": "no argument for NOT",
+    "query": {
+        "WHERE": {
+            "NOT": [
+            ]
+        },
+        "OPTIONS": {
+            "COLUMNS": [
+                "courses_id"
+            ],
+            "FORM": "TABLE"
+        }
+    },
+    "response": {
+        "code":400,
+        "body": {
+            "error":
+                "NOT must take at least two arguments"
+        }
+    }
+}

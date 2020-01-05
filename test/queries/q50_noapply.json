@@ -1,0 +1,47 @@
+{
+    "title": "colin's courses",
+    "query": {
+        "WHERE": {
+            "IS": {
+                "courses_instructor": "macdonald, colin"
+            }
+        },
+        "OPTIONS": {
+            "COLUMNS": [
+                "courses_title",
+                "courses_avg"
+            ]
+        },
+        "TRANSFORMATIONS": {
+            "GROUP": [
+                "courses_title",
+                "courses_avg"
+            ],
+            "APPLY": [
+            ]
+        }
+    },
+    "response": {
+        "code": 200,
+        "body": {
+            "result": [
+                {
+                    "courses_title": "multivrbl calc",
+                    "courses_avg": 71.66
+                },
+                {
+                    "courses_title": "multivrbl calc",
+                    "courses_avg": 75.51
+                },
+                {
+                    "courses_title": "num mthds dff eq",
+                    "courses_avg": 78.66
+                },
+                {
+                    "courses_title": "num mthds dff eq",
+                    "courses_avg": 76.64
+                }
+            ]
+        }
+    }
+}

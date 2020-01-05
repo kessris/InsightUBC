@@ -1,0 +1,25 @@
+{
+    "title": "SELECT dept, courses WHERE courses_id = 200",
+    "query": {
+        "WHERE": {
+            "IS": {
+                "courses_id":"two hundred"
+            }
+        },
+        "OPTIONS": {
+            "COLUMNS": [
+                "courses_dept",
+                "courses_avg",
+                "courses_instructor"
+            ],
+            "ORDER": "courses_avg",
+            "FORM": "TABLE"
+        }
+    },
+    "response": {
+        "code": 200,
+        "body": {
+            "result": []
+        }
+    }
+}

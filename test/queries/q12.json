@@ -1,0 +1,42 @@
+{
+    "title": "SELECT dept, avg WHERE avg > 80",
+    "query": {
+        "WHERE": {
+            "OR": [
+                {
+                "EQ": {
+                    "courses_avg":98.8
+                }
+            },
+                {
+                    "GT":{
+                        "courses_avg":98.8
+                    }
+
+                }
+                ]
+        },
+        "OPTIONS": {
+            "COLUMNS": [
+                "courses_dept",
+                "courses_id",
+                "courses_avg"
+            ],
+            "ORDER": "courses_id",
+            "FORM": "TABLE"
+        }
+    },
+    "response": {
+        "code": 200,
+        "body": {
+            "result": [
+                { "courses_dept": "spph", "courses_id": "300", "courses_avg": 98.98},
+                { "courses_dept": "spph", "courses_id": "300", "courses_avg": 98.98},
+                { "courses_dept": "epse", "courses_id": "449", "courses_avg": 98.8},
+                { "courses_dept": "math", "courses_id": "527", "courses_avg": 99.78},
+                { "courses_dept": "math", "courses_id": "527", "courses_avg": 99.78},
+                { "courses_dept": "cnps", "courses_id": "574", "courses_avg": 99.19}
+            ]
+        }
+    }
+}

@@ -1,0 +1,36 @@
+{
+    "title": "SELECT dept, avg WHERE avg > 97",
+    "query": {
+        "WHERE": {
+            "AND": [
+                {
+                    "NOT": {
+                        "LT": {
+                            "courses_avg": 0
+                        }
+                    }
+                },
+                {
+                    "GT": {
+                        "courses_pass":"fourty"
+                    }
+                }
+            ]
+        },
+        "OPTIONS": {
+            "COLUMNS": [
+                "courses_dept",
+                "courses_avg",
+                "courses_instructor"
+            ],
+            "ORDER": "courses_avg",
+            "FORM": "TABLE"
+        }
+    },
+    "response": {
+        "code":400,
+        "body": {
+            "error": "courses_pass should be a number"
+        }
+    }
+}

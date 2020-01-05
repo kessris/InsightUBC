@@ -1,0 +1,36 @@
+{
+    "title": "SELECT dept, avg WHERE avg > 97",
+    "query": {
+        "WHERE": {
+            "AND": [
+                {
+
+                        "LT": {
+                            "courses_avg": 50
+
+                    }
+                },
+                {
+
+                        "IS": {
+                            "courses_instructor": "*is"
+                        }
+
+                }
+            ]
+        },
+        "OPTIONS": {
+            "COLUMNS": [
+                "courses_dept",
+                "courses_avg",
+                "courses_instructor"
+            ],
+            "ORDER": "courses_avg",
+            "FORM": "TABLE"
+        }
+    },
+    "response": {
+        "code":200,
+        "body":
+{"result":[{"courses_dept":"fopr","courses_avg":4.5,"courses_instructor":"bendickson, dennis"}]}}
+    }

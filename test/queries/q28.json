@@ -1,0 +1,97 @@
+{
+    "title": "all empty cases OR classes with average 99",
+    "query": {
+        "WHERE": {
+            "OR": [
+                {
+                    "AND":[
+                        {
+                            "GT": {
+                                "courses_avg":97
+                            }
+                        },
+                        {
+                            "IS": {
+                                "courses_dept":"aaaaa"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "IS": {
+                        "courses_id":"1000000000000"
+                    }
+                },
+                {
+                    "IS": {
+                        "courses_title": "aaaaaaa"
+                    }
+                },
+                {
+                    "IS": {
+                        "courses_instructor":"aaaaaaa"
+                    }
+                },
+                {
+                    "IS": {
+                        "courses_dept":"math "
+                    }
+                },
+                {
+                    "IS": {
+                        "courses_dept":"math,"
+                    }
+                },
+                {
+                    "IS": {
+                        "courses_id":"math,"
+                    }
+                },
+                {
+                    "IS": {
+                        "courses_uuid": "1000000000000000"
+                    }
+                },
+                {
+                    "LT": {
+                        "courses_pass": 0
+                    }
+                },
+                {
+                    "GT":{
+                        "courses_fail":1000000
+                    }
+                },
+                {
+                    "LT":{
+                        "courses_audit":0
+                    }
+                },
+                {
+                    "GT":{
+                        "courses_avg": 99
+                    }
+                }
+            ]
+        },
+        "OPTIONS": {
+            "COLUMNS": [
+                "courses_dept",
+                "courses_id",
+                "courses_avg"
+            ],
+            "ORDER": "courses_avg",
+            "FORM": "TABLE"
+        }
+    },
+    "response": {
+        "code": 200,
+        "body": {
+            "result": [
+                { "courses_dept": "cnps", "courses_id": "574", "courses_avg": 99.19 },
+                { "courses_dept": "math", "courses_id": "527", "courses_avg": 99.78 },
+                { "courses_dept": "math", "courses_id": "527", "courses_avg": 99.78 }
+            ]
+        }
+    }
+}

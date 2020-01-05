@@ -1,0 +1,22 @@
+{
+    "title": "no argument for AND",
+    "query": {
+        "WHERE": {
+            "AND": [
+            ]
+        },
+        "OPTIONS": {
+            "COLUMNS": [
+                "courses_id"
+            ],
+            "FORM": "TABLE"
+        }
+    },
+    "response": {
+        "code":400,
+        "body": {
+            "error":
+                "And must take at least two arguments"
+        }
+    }
+}

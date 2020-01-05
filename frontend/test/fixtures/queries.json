@@ -1,0 +1,434 @@
+{
+        "query1": {
+            "WHERE": {
+                "IS": {
+                    "courses_dept": "cpsc"
+                }
+            },
+            "OPTIONS": {
+                "COLUMNS": [
+                    "courses_dept",
+                    "courses_id"
+                ],
+                "ORDER": "courses_id"
+            }
+        },
+        "query2": {
+            "WHERE": {
+                "IS": {
+                    "courses_dept": "cpsc"
+                }
+            },
+            "OPTIONS": {
+                "COLUMNS": [
+                    "courses_dept",
+                    "courses_id"
+                ],
+                "ORDER": "courses_id"
+            }
+        },
+
+        "query3": {
+            "WHERE": {
+                "NOT":{
+                    "IS": {
+                        "courses_dept": "cpsc"
+                    }
+                }
+            },
+            "OPTIONS": {
+                "COLUMNS": [
+                    "courses_dept",
+                    "courses_id"
+                ],
+                "ORDER": "courses_id"
+            }
+        },
+        "query4": {
+            "WHERE": {
+                "OR":[
+                    {"IS": {
+                        "courses_dept": "cpsc"
+                    }},
+                    {"IS": {
+                        "courses_dept": "musc"
+                    }}
+                ]
+
+            },
+            "OPTIONS": {
+                "COLUMNS": [
+                    "courses_dept",
+                    "courses_id"
+                ],
+                "ORDER": "courses_id"
+            }
+        },
+        "query5": {
+            "WHERE": {
+                "AND":[
+                    {"IS": {
+                        "courses_dept": "cpsc"
+                    }},
+                    {"GT": {
+                        "courses_avg": 90
+                    }}
+                ]
+
+            },
+            "OPTIONS": {
+                "COLUMNS": [
+                    "courses_dept",
+                    "courses_id"
+                ],
+                "ORDER": "courses_id"
+            }
+        },
+        "query6": {
+            "WHERE": {
+                "NOT":{
+                    "OR":[
+                        {
+                            "IS": {
+                                "courses_dept": "cpsc"
+                            }
+                        },
+                        {
+                            "IS": {
+                                "courses_dept": "musc"
+                            }
+                        }
+                    ]
+                }
+            },
+            "OPTIONS": {
+                "COLUMNS": [
+                    "courses_dept",
+                    "courses_id"
+                ],
+                "ORDER": "courses_id"
+            }
+        },
+        "query7": {
+            "WHERE": {
+                "NOT":{
+                    "OR":[
+                        {
+                            "NOT": {
+                                "IS": {
+                                    "courses_dept": "cpsc"
+                                }
+                            }
+                        },
+                        {
+                            "IS": {
+                                "courses_dept": "musc"
+                            }
+                        }
+                    ]
+                }
+            },
+            "OPTIONS": {
+                "COLUMNS": [
+                    "courses_dept",
+                    "courses_id"
+                ],
+                "ORDER": "courses_id"
+            }
+        },
+        "query8": {
+            "WHERE": {
+                "IS": {
+                    "courses_dept": ""
+                }
+            },
+            "OPTIONS": {
+                "COLUMNS": [
+                    "courses_dept",
+                    "courses_id"
+                ],
+                "ORDER": {"dir": "UP", "keys": ["courses_id"]}
+            }
+        },
+        "noOrder": {
+            "WHERE": {
+                "EQ": {
+                    "courses_avg": 80.5
+                }
+            },
+            "OPTIONS": {
+                "COLUMNS": [
+                    "courses_uuid"
+                ]
+            }
+        },
+        "noColumn": {
+            "WHERE": {
+                "EQ": {
+                    "courses_avg": 80.5
+                }
+            }
+        },
+        "descendingOrder": {
+            "WHERE": {
+                "EQ": {
+                    "courses_avg": 80.5
+                }
+            },
+            "OPTIONS": {
+                "COLUMNS": [
+                    "courses_avg"
+                ],
+                "ORDER": {"dir": "DOWN", "keys": ["courses_avg"]}
+            }
+        },
+        "transformation": {
+            "WHERE": {
+                "EQ": {
+                    "courses_avg": 80.5
+                }
+            },
+            "OPTIONS": {
+                "COLUMNS": [
+                    "courses_uuid",
+                    "test"
+                ],
+                "ORDER": "courses_uuid"
+            },
+            "TRANSFORMATIONS": {
+                "GROUP": ["courses_uuid"],
+                "APPLY": [
+                    {"test": {"AVG": "courses_uuid"}}
+                ]
+            }
+        },
+        "transformation2": {
+            "WHERE": {
+                "EQ": {
+                    "courses_avg": 80.5
+                }
+            },
+            "OPTIONS": {
+                "COLUMNS": [
+                    "test",
+                    "apple"
+                ],
+                "ORDER": "apple"
+            },
+            "TRANSFORMATIONS": {
+                "GROUP": ["courses_uuid",
+                            "courses_avg"],
+                "APPLY": [
+                    {"test": {"AVG": "courses_uuid"}},
+                    {"apple": {"MAX": "courses_avg"}}
+                ]
+            }
+        },
+        "room1": {
+            "WHERE": {
+                "EQ": {
+                    "rooms_seats": 50
+                }
+            },
+            "OPTIONS": {
+                "COLUMNS": [
+                    "rooms_address",
+                    "rooms_fullname"
+                ],
+                "ORDER": "rooms_address"
+            }
+        },
+        "room2": {
+            "WHERE": {
+                "OR": [
+                    {
+                        "NOT": {
+                            "GT": {
+                                "rooms_seats": 10
+                            }
+                        }
+                    },
+                    {
+                        "IS": {
+                        "rooms_fullname": "Buchanan"
+                        }
+                    }
+                ]
+            },
+            "OPTIONS": {
+                "COLUMNS": [
+                    "rooms_address",
+                    "grape"
+                ],
+                "ORDER": {"dir": "DOWN", "keys": ["grape"]}
+            },
+            "TRANSFORMATIONS": {
+                "GROUP": ["rooms_address"],
+                "APPLY": [
+                    {"grape": {"COUNT": "rooms_address"}}
+                ]
+            }
+        },
+        "room3": {
+            "WHERE": {
+                "NOT":
+                    {
+                        "IS": {
+                            "rooms_furniture": "*Tables*"
+                        }
+                    }
+            },
+            "OPTIONS": {
+                "COLUMNS": [
+                    "rooms_type"
+                ],
+                "ORDER": "rooms_type"
+            },
+            "TRANSFORMATIONS": {
+                "GROUP": ["rooms_furniture", "rooms_type"],
+                "APPLY": [
+                    {"cherry": {"MAX": "rooms_lat"}},
+                    {"banana": {"MIN": "rooms_lon"}}
+                ]
+            }
+        },
+    "beekleene": {
+        "WHERE": {
+            "EQ": {
+                "courses_avg": 50
+            }
+        },
+        "TRANSFORMATIONS": {
+            "APPLY": [
+                {"": {"COUNT": "courses_audit"}}
+            ]
+        }
+    },
+    "beekleene2": {
+        "WHERE": {
+            "AND": [
+                {
+                    "EQ": {
+                        "courses_avg": 40
+                    }
+                },
+                {
+                    "GT": {
+                        "courses_avg": 50
+                    }
+                },
+                {
+                    "NOT": {
+                        "LT": {
+                            "courses_avg": 50
+                        }
+                    }
+                }
+            ]
+        },
+        "OPTIONS": {
+            "COLUMNS": [
+                "courses_avg"
+            ],
+            "ORDER": {"dir": "UP", "keys": ["courses_avg"]}
+        }
+    },
+    "beesag": {
+        "WHERE": {
+            "AND": [
+                {
+                    "GT": {
+                        "courses_avg": 30
+                    }
+                },
+                {
+                    "LT": {
+                        "courses_avg": 50
+                    }
+                }
+            ]
+        },
+                "OPTIONS": {
+                    "COLUMNS": [
+                        "courses_avg",
+                        "a",
+                        "c"
+                    ],
+                    "ORDER": {"dir": "UP", "keys": ["courses_avg","courses_dept"]}
+                },
+                "TRANSFORMATIONS": {
+                    "GROUP": ["courses_uuid", "courses_year"],
+                    "APPLY": [
+                        {"a": {"AVG": "courses_avg"}},
+                        {"b": {"MAX": "courses_avg"}},
+                        {"c": {"COUNT": "courses_avg"}}
+                    ]
+                }
+    },
+    "beesteamed": {
+        "WHERE": {
+            "EQ": {
+                "courses_avg": 50
+            }
+        },
+        "TRANSFORMATIONS": {
+            "APPLY": [
+                {"a": {"AVG": "courses_avg"}},
+                {"b": {"COUNT": "courses_instructor"}}
+            ]
+        }
+
+    },
+    "test":{
+        "WHERE": {
+            "EQ": {
+                "courses_avg": 50
+            }
+        },
+        "TRANSFORMATIONS": {
+            "GROUP": ["courses_avg"],
+            "APPLY": [
+            ]
+        }
+    },
+    "year":{
+        "WHERE": {
+            "EQ": {
+                "courses_year": 1984
+            }
+        }
+    },
+    "rooms":{
+        "WHERE": {
+            "AND": [
+                {
+                    "IS": {
+                        "rooms_address": "hi"
+                    }
+                }
+                ,{"IS": {
+                    "rooms_fullname": "hi"
+                }},{"IS": {
+                    "rooms_furniture": "hi"
+                }},{"IS": {
+                    "rooms_href": "href"
+                }},{"EQ": {
+                    "rooms_lat": 1
+                }},{"EQ": {
+                    "rooms_lon": 1
+                }},{"IS": {
+                    "rooms_name": "hi"
+                }},{"EQ": {
+                    "rooms_number": 1
+                }},{"EQ": {
+                    "rooms_seats": 1
+                }},{"IS": {
+                    "rooms_shortname": "hi"
+                }},{"IS": {
+                    "rooms_type": "hi"
+                }}
+            ]
+
+        }
+    }
+}

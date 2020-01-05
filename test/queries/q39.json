@@ -1,0 +1,33 @@
+{
+    "title": "COMPLEX AND EQ and GT",
+    "query": {
+        "WHERE": {
+            "AND": [
+                {
+                    "EQ": {
+                        "courses_avg": 97
+                    }
+                },
+                {
+                    "GT": {
+                        "courses_avg": 90
+                    }
+                }
+            ]
+        },
+        "OPTIONS": {
+            "COLUMNS": [
+                "courses_avg",
+                "courses_dept",
+                "courses_uuid"
+            ],
+            "ORDER": "courses_avg",
+            "FORM": "TABLE"
+        }
+    },
+    "response": {
+        "code": 200,
+        "body":
+        {"result":[{"courses_avg":97,"courses_dept":"crwr","courses_uuid":"26255"},{"courses_avg":97,"courses_dept":"epse","courses_uuid":"76310"},{"courses_avg":97,"courses_dept":"psyc","courses_uuid":"54846"}]}
+    }
+}

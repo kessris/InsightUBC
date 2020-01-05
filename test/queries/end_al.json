@@ -1,0 +1,76 @@
+{
+    "title": "mahta's_courses",
+    "query": {
+        "WHERE": {
+            "IS": {
+                "courses_instructor": "*mahta"
+            }
+        },
+        "OPTIONS": {
+            "COLUMNS": [
+                "courses_dept",
+                "courses_instructor"
+            ],
+            "FORM": "TABLE"
+        }
+    },
+    "response": {
+        "code": 200,
+        "body": {
+            "result": [
+                {
+                    "courses_dept": "math",
+                    "courses_instructor": "khosravi, mahta"
+                },
+                {
+                    "courses_dept": "math",
+                    "courses_instructor": "khosravi, mahta"
+                },
+                {
+                    "courses_dept": "math",
+                    "courses_instructor": "khosravi, mahta"
+                },
+                {
+                    "courses_dept": "math",
+                    "courses_instructor": "khosravi, mahta"
+                },
+                {
+                    "courses_dept": "math",
+                    "courses_instructor": "khosravi, mahta"
+                },
+                {
+                    "courses_dept": "math",
+                    "courses_instructor": "khosravi, mahta"
+                },
+                {
+                    "courses_dept": "math",
+                    "courses_instructor": "khosravi, mahta"
+                },
+                {
+                    "courses_dept": "math",
+                    "courses_instructor": "khosravi, mahta"
+                },
+                {
+                    "courses_dept": "math",
+                    "courses_instructor": "khosravi, mahta"
+                },
+                {
+                    "courses_dept": "math",
+                    "courses_instructor": "khosravi, mahta"
+                },
+                {
+                    "courses_dept": "math",
+                    "courses_instructor": "khosravi, mahta"
+                },
+                {
+                    "courses_dept": "math",
+                    "courses_instructor": "khosravi, mahta"
+                },
+                {
+                    "courses_dept": "math",
+                    "courses_instructor": "khosravi, mahta"
+                }
+            ]
+        }
+    }
+}

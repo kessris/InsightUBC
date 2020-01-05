@@ -1,0 +1,43 @@
+{
+    "title": "SELECT dept, avg WHERE avg > 80",
+    "query": {
+        "WHERE": {
+            "OR": [
+                {
+                "EQ": {
+                    "courses_avg":4.5
+                }
+            },
+                {
+                    "LT":{
+                        "courses_avg":4.5
+                    }
+
+                }
+                ]
+        },
+        "OPTIONS": {
+            "COLUMNS": [
+                "courses_dept",
+                "courses_id",
+                "courses_avg"
+            ],
+            "ORDER": "courses_id",
+            "FORM": "TABLE"
+        }
+    },
+    "response": {
+        "code": 200,
+        "body": {
+            "result": [
+                { "courses_dept": "lfs", "courses_id": "100", "courses_avg":0},
+                { "courses_dept": "lfs", "courses_id": "100", "courses_avg": 0},
+                { "courses_dept": "frst", "courses_id": "202", "courses_avg": 0},
+                { "courses_dept": "busi", "courses_id": "330", "courses_avg": 4},
+                { "courses_dept": "busi", "courses_id": "330", "courses_avg": 4},
+                { "courses_dept": "fopr", "courses_id": "362", "courses_avg": 4.5},
+                { "courses_dept": "wood", "courses_id": "475", "courses_avg": 1}
+            ]
+        }
+    }
+}

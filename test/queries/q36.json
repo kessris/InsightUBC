@@ -1,0 +1,42 @@
+{
+    "title": "SELECT dept, avg WHERE avg > 80",
+    "query": {
+        "WHERE": {
+            "OR": [
+                {
+                    "IS": {
+                        "courses_id":"*211111"
+                    }
+                },
+                {
+                    "IS":{
+                        "courses_id":"3333333*"
+                    }
+
+                },
+                {
+                    "IS":{
+                        "courses_id":"*3333333333*"
+                    }
+
+                }
+            ]
+        },
+        "OPTIONS": {
+            "COLUMNS": [
+                "courses_dept",
+                "courses_id",
+                "courses_avg"
+            ],
+            "FORM": "TABLE"
+        }
+    },
+    "response": {
+        "code": 200,
+        "body": {
+            "result": [
+
+            ]
+        }
+    }
+}

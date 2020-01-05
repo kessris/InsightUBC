@@ -1,0 +1,41 @@
+{
+    "title": "id_notfound",
+    "query": {
+        "WHERE": {
+            "GT": {
+                "rooms2_seats": 84
+            }
+        },
+        "OPTIONS": {
+            "COLUMNS": [
+                "rooms2_name",
+                "minSeats"
+            ],
+            "ORDER": {
+                "dir": "DOWN",
+                "keys": [
+                    "minSeats",
+                    "rooms_name"
+                ]
+            }
+        },
+        "TRANSFORMATIONS": {
+            "GROUP": [
+                "rooms_name"
+            ],
+            "APPLY": [
+                {
+                    "minSeats": {
+                        "MIN": "rooms_seats"
+                    }
+                }
+            ]
+        }
+    },
+    "response": {
+        "code": 400,
+        "body": {
+            "result": []
+        }
+    }
+}

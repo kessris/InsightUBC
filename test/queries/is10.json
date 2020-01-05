@@ -1,0 +1,30 @@
+{
+    "title": "queryis10",
+    "query": {
+        "WHERE":{
+            "AND": [
+                {
+                    "IS": {
+                        "courses_uuid":"*123*"
+                    }
+                },
+                {
+                    "GT": {
+                        "courses_avg":89
+                    }
+                }
+            ]
+        },
+        "OPTIONS": {
+            "COLUMNS": [
+                "courses_avg"
+            ],
+            "ORDER": "courses_avg",
+            "FORM": "TABLE"
+        }
+    },
+    "response": {
+        "code": 200,
+        "body": {"result":[{"courses_avg":89.38},{"courses_avg":89.95},{"courses_avg":89.95},{"courses_avg":90},{"courses_avg":90},{"courses_avg":90.86},{"courses_avg":92.28},{"courses_avg":92.91},{"courses_avg":94.48}]}
+    }
+}

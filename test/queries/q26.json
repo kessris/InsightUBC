@@ -1,0 +1,33 @@
+{
+    "title": "noColumn",
+    "query": {
+        "WHERE": {
+            "AND": [
+                {
+                    "NOT": {
+                        "LT": {
+                            "courses_avg": 90
+                        }
+                    }
+                },
+                {
+                    "IS": {
+                        "courses_id":"200"
+                    }
+                }
+            ]
+        },
+        "OPTIONS": {
+            "COLUMNS": [
+
+            ],
+            "FORM": "TABLE"
+        }
+    },
+    "response": {
+        "code":400,
+        "body": {
+            "error": "columns must have at least one argument"
+        }
+    }
+}

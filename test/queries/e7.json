@@ -1,0 +1,42 @@
+{
+    "title": "invalid value",
+    "query": {
+        "WHERE": {
+            "AND": [
+                {
+                    "IS": {
+                        "courses_uuid":"hello"
+                    }
+                },
+                {
+                    "EQ": {
+                        "courses_avg":50
+                    }
+                }
+            ]
+        },
+        "OPTIONS": {
+            "COLUMNS": [
+                "courses_hello",
+                "courses_uuid",
+                "courses_dept",
+                "courses_id",
+                "courses_instructor",
+                "courses_title",
+                "courses_pass",
+                "courses_fail",
+                "courses_audit"
+            ],
+            "ORDER": "courses_avg",
+            "FORM": "TABLE"
+        }
+    },
+    "response": {
+        "code": 400,
+        "body": {
+            "result": [
+                { "courses_avg": 50 }
+            ]
+        }
+    }
+}

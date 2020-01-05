@@ -1,0 +1,25 @@
+{
+    "title": "SELECT courses_dept and its value is 22",
+    "query": {
+        "WHERE": {
+            "IS": {
+                "courses_dept":22
+            }
+        },
+        "OPTIONS": {
+            "COLUMNS": [
+                "courses_dept",
+                "courses_avg",
+                "course_instructor"
+            ],
+            "ORDER": "courses_avg",
+            "FORM": "TABLE"
+        }
+    },
+    "response": {
+        "code": 400,
+        "body": {
+            "error": "courses dept should be string"
+        }
+    }
+}

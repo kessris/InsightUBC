@@ -1,0 +1,22 @@
+{
+    "title": "d2_rooms_seats",
+    "query": {
+        "WHERE": {
+            "LT": {
+                "rooms_seats": 7
+            }
+        },
+        "OPTIONS": {
+            "COLUMNS": [
+                "rooms_shortname"
+            ]
+        }
+    },
+    "response": {
+        "code": 200,
+        "body": {
+            "result": [
+                { "rooms_shortname": "MCML" },
+                { "rooms_shortname": "MCML" }]}
+    }
+}

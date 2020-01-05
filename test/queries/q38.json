@@ -1,0 +1,38 @@
+{
+    "title": "MATH OPERATIONS WITH OR q38",
+    "query": {
+        "WHERE": {
+            "OR": [
+                {
+                    "EQ": {
+                        "courses_avg": 4
+                    }
+                },
+                {
+                    "LT": {
+                        "courses_avg": 10
+                    }
+                },
+                {
+                    "GT": {
+                        "courses_avg": 99
+                    }
+                }
+            ]
+        },
+        "OPTIONS": {
+            "COLUMNS": [
+                "courses_avg",
+                "courses_dept",
+                "courses_uuid"
+            ],
+            "ORDER": "courses_avg",
+            "FORM": "TABLE"
+        }
+    },
+    "response": {
+        "code": 200,
+        "body":
+        {"result":[{"courses_avg":0,"courses_dept":"frst","courses_uuid":"89536"},{"courses_avg":0,"courses_dept":"lfs","courses_uuid":"56402"},{"courses_avg":0,"courses_dept":"lfs","courses_uuid":"56403"},{"courses_avg":1,"courses_dept":"wood","courses_uuid":"49835"},{"courses_avg":4,"courses_dept":"busi","courses_uuid":"16427"},{"courses_avg":4,"courses_dept":"busi","courses_uuid":"16428"},{"courses_avg":4.5,"courses_dept":"fopr","courses_uuid":"84769"},{"courses_avg":99.19,"courses_dept":"cnps","courses_uuid":"26777"},{"courses_avg":99.78,"courses_dept":"math","courses_uuid":"5373"},{"courses_avg":99.78,"courses_dept":"math","courses_uuid":"5374"}]}
+    }
+}

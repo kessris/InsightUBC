@@ -1,0 +1,43 @@
+{
+    "title": "courses with 2017 and onwards",
+    "query": {
+        "WHERE": {
+            "AND": [{
+                "GT": {
+                    "courses_year": 2015
+                }},
+                {"IS":{"courses_dept": "math"}
+                }
+            ]
+        },
+        "OPTIONS": {
+            "COLUMNS": [
+                "courses_title",
+                "overallAvg"
+            ],
+            "ORDER": {
+                "dir": "DOWN",
+                "keys": [
+                    "courses_title",
+                    "overallAvg"
+                ]
+            }
+        },
+        "TRANSFORMATIONS": {
+            "GROUP": [
+                "courses_title"
+            ],
+            "APPLY": [
+                {
+                    "overallAvg": {
+                        "AVG": "courses_avg"
+                    }
+                }
+            ]
+        }
+    },
+    "response": {
+        "code": 200,
+        "body": {"result":[{"courses_title":"var & aprx mtds","overallAvg":79.22},{"courses_title":"real variabls i","overallAvg":69.71},{"courses_title":"real analysis i","overallAvg":79.22},{"courses_title":"probability i","overallAvg":88.5},{"courses_title":"probability","overallAvg":80.39},{"courses_title":"partl diff equat","overallAvg":66.13},{"courses_title":"ord diff equtns","overallAvg":72.15},{"courses_title":"number theory","overallAvg":79.71},{"courses_title":"num mthds dff eq","overallAvg":78.66},{"courses_title":"multivrbl calc","overallAvg":73.97},{"courses_title":"mthds asymp anal","overallAvg":89.38},{"courses_title":"mltvar&vctr calc","overallAvg":74.65},{"courses_title":"meas thry&integr","overallAvg":87.8},{"courses_title":"intr number thry","overallAvg":67.03},{"courses_title":"intr mod diff ge","overallAvg":67.38},{"courses_title":"flds&galois thry","overallAvg":80.8},{"courses_title":"elem diff eq i","overallAvg":67.75},{"courses_title":"discrete math","overallAvg":79.17},{"courses_title":"differ calculus","overallAvg":70.6},{"courses_title":"diff geometry i","overallAvg":97.25},{"courses_title":"diff equations 2","overallAvg":67},{"courses_title":"diff equations","overallAvg":67.92},{"courses_title":"dif calc phys ap","overallAvg":60.37},{"courses_title":"dff calc ap c&ss","overallAvg":66.8},{"courses_title":"df calc app lf s","overallAvg":71.08},{"courses_title":"df calc ap ph sc","overallAvg":66.77},{"courses_title":"complex analysis","overallAvg":86},{"courses_title":"complex analy","overallAvg":93.2},{"courses_title":"calculus survey","overallAvg":67.66},{"courses_title":"calculus 3","overallAvg":66.11},{"courses_title":"calc socsci comm","overallAvg":62.09},{"courses_title":"asymp&prtb mthds","overallAvg":87.8}]}
+    }
+}

@@ -1,0 +1,39 @@
+{
+    "title": "SELECT dept, avg WHERE avg > 80",
+    "query": {
+        "WHERE":{
+            "AND":[
+                {
+                    "IS": {
+                        "courses_dept": "math"
+                    }
+                },
+                {
+                    "LT": {
+                        "courses_pass":2
+                    }
+                }
+            ]
+        },
+        "OPTIONS":{
+            "COLUMNS":[
+                "courses_title",
+                "courses_id",
+                "courses_instructor"
+            ],
+            "ORDER":"courses_id"
+        }
+    },
+    "response": {
+        "code": 200,
+        "body": {
+            "result": [
+                { "courses_title": "df calc ap ph sc", "courses_id": "100", "courses_instructor": "" },
+                { "courses_title": "df calc ap ph sc", "courses_id": "100", "courses_instructor": "" },
+                { "courses_title": "msc major essay", "courses_id": "589", "courses_instructor": "" },
+                { "courses_title": "msc major essay", "courses_id": "589", "courses_instructor": "" }
+
+            ]
+        }
+    }
+}

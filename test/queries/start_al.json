@@ -1,0 +1,21 @@
+{
+    "title": "SELECT dept, avg WHERE avg > 97",
+    "query": {
+        "WHERE": {
+            "IS": {
+                "courses_instructor": "cura*"
+            }
+        },
+        "OPTIONS": {
+            "COLUMNS": [
+                "courses_dept",
+                "courses_instructor"
+            ],
+            "FORM": "TABLE"
+        }
+    },
+    "response": {
+        "code": 200,
+        "body": {"result":[{"courses_dept":"fren","courses_instructor":"curat, herve;o'hagan, michael;scott, anne"},{"courses_dept":"fren","courses_instructor":"curat, herve;o'hagan, michael;scott, anne"},{"courses_dept":"fren","courses_instructor":"curat, herve;o'hagan, michael;scott, anne"},{"courses_dept":"fren","courses_instructor":"curat, herve;o'hagan, michael;scott, anne"},{"courses_dept":"fren","courses_instructor":"curat, herve;o'hagan, michael;scott, anne"},{"courses_dept":"fren","courses_instructor":"curat, herve;duggan, maryse;rouget, christine;scott, anne"},{"courses_dept":"fren","courses_instructor":"curat, herve;o'hagan, michael;scott, anne"},{"courses_dept":"fren","courses_instructor":"curat, herve;o'hagan, michael;scott, anne"},{"courses_dept":"fren","courses_instructor":"curat, herve;o'hagan, michael;scott, anne"},{"courses_dept":"fren","courses_instructor":"curat, herve;o'hagan, michael;scott, anne"},{"courses_dept":"fren","courses_instructor":"curat, herve;o'hagan, michael;scott, anne"},{"courses_dept":"fren","courses_instructor":"curat, herve;duggan, maryse;rouget, christine;scott, anne"},{"courses_dept":"fren","courses_instructor":"curat, herve"},{"courses_dept":"fren","courses_instructor":"curat, herve"},{"courses_dept":"fren","courses_instructor":"curat, herve"},{"courses_dept":"fren","courses_instructor":"curat, herve"},{"courses_dept":"fren","courses_instructor":"curat, herve"},{"courses_dept":"fren","courses_instructor":"curat, herve"},{"courses_dept":"fren","courses_instructor":"curat, herve"},{"courses_dept":"fren","courses_instructor":"curat, herve"},{"courses_dept":"fren","courses_instructor":"curat, herve"},{"courses_dept":"fren","courses_instructor":"curat, herve"},{"courses_dept":"fren","courses_instructor":"curat, herve"},{"courses_dept":"fren","courses_instructor":"curat, herve"},{"courses_dept":"fren","courses_instructor":"curat, herve"}]}
+    }
+}

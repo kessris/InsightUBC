@@ -1,0 +1,16 @@
+{
+    "title": "no body",
+    "query": {
+        "WHERE": {
+        },
+        "OPTIONS": {
+
+        }
+    },
+    "response": {
+        "code":400,
+        "body": {
+            "error": "no argument for options"
+        }
+    }
+}

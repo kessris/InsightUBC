@@ -1,0 +1,41 @@
+{
+    "title": "Non-uniqueCountUuid",
+    "query": {
+        "WHERE": {
+            "GT": {
+                "courses_year": 2013
+            }
+        },
+        "OPTIONS": {
+            "COLUMNS": [
+                "courses_year",
+                "totalUnique",
+                "instructorNum"
+            ],
+            "ORDER": {"dir": "DOWN", "keys": ["totalUnique"]}
+        },
+        "TRANSFORMATIONS": {
+            "GROUP": [
+                "courses_year"
+            ],
+            "APPLY": [
+                {
+                    "totalUnique": {
+                        "COUNT": "courses_uuid"
+                    }
+                },
+                {
+                    "instructorNum": {
+                        "COUNT": "courses_instructor"
+                    }
+                }
+            ]
+        }
+    },
+    "response": {
+        "code": 200,
+        "body":
+        {"result":[{"courses_year":2015,"totalUnique":5475,"instructorNum":2311},{"courses_year":2014,"totalUnique":5326,"instructorNum":2233},{"courses_year":2016,"totalUnique":965,"instructorNum":589}]}
+
+    }
+}

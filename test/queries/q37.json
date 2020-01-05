@@ -1,0 +1,22 @@
+{
+    "title": "no argument for OR",
+    "query": {
+        "WHERE": {
+            "OR": [
+            ]
+        },
+        "OPTIONS": {
+            "COLUMNS": [
+                "courses_id"
+            ],
+            "FORM": "TABLE"
+        }
+    },
+    "response": {
+        "code":400,
+        "body": {
+            "error":
+            "OR must take at least one argument"
+        }
+    }
+}

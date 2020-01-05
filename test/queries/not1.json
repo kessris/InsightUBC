@@ -1,0 +1,27 @@
+{
+    "title": "SELECT dept, avg WHERE avg > 97",
+    "query": {
+        "WHERE": {
+            "NOT": {
+                "awef": {
+                    "courses_avg":0
+                }
+            }
+        },
+        "OPTIONS": {
+            "COLUMNS": [
+                "courses_avg"
+            ],
+            "ORDER": "courses_avg",
+            "FORM": "TABLE"
+        }
+    },
+    "response": {
+        "code": 400,
+        "body": {
+            "result": [{ "courses_avg": 0 },
+                { "courses_avg": 0 },
+                { "courses_avg": 0 }]
+        }
+    }
+}

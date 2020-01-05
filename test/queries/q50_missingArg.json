@@ -1,0 +1,31 @@
+{
+    "title": "missingArg",
+    "query": {
+        "WHERE": {
+            "IS": {
+            }
+        },
+        "OPTIONS": {
+            "COLUMNS": [
+                "courses_title",
+                "courses_avg"
+            ]
+        },
+        "TRANSFORMATIONS": {
+            "GROUP": [
+                "courses_title",
+                "courses_avg"
+            ],
+            "APPLY": [
+            ]
+        }
+    },
+    "response": {
+        "code": 400,
+        "body": {
+            "result": [
+
+            ]
+        }
+    }
+}

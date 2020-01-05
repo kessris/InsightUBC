@@ -1,0 +1,91 @@
+{
+    "title": "group math courses by title",
+    "query": {
+        "WHERE": {
+            "AND": [
+                {
+                    "IS": {
+                        "courses_dept": "math"
+                    }
+                },
+                {
+                    "IS": {
+                        "courses_instructor": "*macdonald*"
+                    }
+                }
+            ]
+        },
+        "OPTIONS": {
+            "COLUMNS": [
+                "courses_title",
+                "overallAvg",
+                "courses_instructor"
+            ]
+        },
+        "TRANSFORMATIONS": {
+            "GROUP": [
+                "courses_title",
+                "courses_instructor"
+            ],
+            "APPLY": [
+                {
+                    "overallAvg": {
+                        "AVG": "courses_avg"
+                    }
+                }
+            ]
+        }
+    },
+    "response": {
+        "code": 200,
+        "body": {
+            "result": [
+                {
+                    "courses_title": "df calc ap ph sc",
+                    "courses_instructor": "macdonald, mark",
+                    "overallAvg": 69.78
+                },
+                {
+                    "courses_title": "int calc ap ph s",
+                    "courses_instructor": "macdonald, john",
+                    "overallAvg": 65.25
+                },
+                {
+                    "courses_title": "df calc app lf s",
+                    "courses_instructor": "macdonald, john",
+                    "overallAvg": 70.19
+                },
+                {
+                    "courses_title": "calc socsci comm",
+                    "courses_instructor": "macdonald, mark",
+                    "overallAvg": 66.09
+                },
+                {
+                    "courses_title": "multivrbl calc",
+                    "courses_instructor": "macdonald, colin",
+                    "overallAvg": 73.58
+                },
+                {
+                    "courses_title": "applied analysis",
+                    "courses_instructor": "macdonald, john",
+                    "overallAvg": 76.73
+                },
+                {
+                    "courses_title": "intro to math",
+                    "courses_instructor": "macdonald, john",
+                    "overallAvg": 82.89
+                },
+                {
+                    "courses_title": "num mthds dff eq",
+                    "courses_instructor": "macdonald, colin",
+                    "overallAvg": 77.65
+                },
+                {
+                    "courses_title": "math demonstrtns",
+                    "courses_instructor": "macdonald, john",
+                    "overallAvg": 83.88
+                }
+            ]
+        }
+    }
+}

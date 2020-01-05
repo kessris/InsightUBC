@@ -1,0 +1,19 @@
+{
+    "title": "SELECT dept, avg WHERE avg > 97",
+    "query": {
+        "WHERE": {
+            "IS": {
+                "rooms_furniture": "Classroom-Moveable Tables & Chairs"
+            }
+        },
+        "OPTIONS": {
+            "COLUMNS": [
+                "rooms_seats"
+            ]
+        }
+    },
+    "response": {
+        "code": 200,
+        "body": {"result":[{"rooms_seats":33},{"rooms_seats":37},{"rooms_seats":24},{"rooms_seats":24},{"rooms_seats":24},{"rooms_seats":24},{"rooms_seats":22},{"rooms_seats":39},{"rooms_seats":21},{"rooms_seats":8},{"rooms_seats":8},{"rooms_seats":8},{"rooms_seats":8},{"rooms_seats":8},{"rooms_seats":6},{"rooms_seats":6},{"rooms_seats":8},{"rooms_seats":8},{"rooms_seats":8},{"rooms_seats":8},{"rooms_seats":8},{"rooms_seats":8},{"rooms_seats":8},{"rooms_seats":8},{"rooms_seats":8},{"rooms_seats":40},{"rooms_seats":40},{"rooms_seats":27},{"rooms_seats":27}]}
+    }
+}

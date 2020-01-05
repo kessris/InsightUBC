@@ -1,0 +1,30 @@
+{
+    "title": "no body",
+    "query": {
+        "WHERE": {
+    "AND": [
+        {
+            "NOT": {
+                "LT": {
+                    "courses_avg": 90
+                }
+            }
+        },
+        {
+            "IS": {
+                "courses_id":"200"
+            }
+        }
+    ]
+        },
+        "OPTIONS": {
+
+        }
+    },
+    "response": {
+        "code":400,
+        "body": {
+            "error": "no argument for options"
+        }
+    }
+}

@@ -1,0 +1,25 @@
+{
+    "query1": "simple query IS comparison for department with two columns and old order syntax",
+    "query2": "testing any with one logic",
+    "query3": "none of the following with one logic",
+    "query4": "any of the following with more than one logic",
+    "query5": "all of the following with more than one logic",
+    "query6": "none of the following with more than one logic",
+    "query7": " 'not' is checked for one condition",
+    "query8": "condition's term is empty. ie) 'IS':      ", // also try handling empty term using number logic ie)EQ
+    "noOrder": "query with no order, and one column",
+    "noColumn": "query with no column",
+    "descendingOrder": "Descending Order",
+    "transformation": "Group with one key, one apply key",
+    "transformation2": "2 groups, 2 applykeys",
+    "room1": "simple query for rooms-tab",
+    "room2": "complex query for rooms-tab",
+     "room3": "another complex query for rooms-tab",
+    "beekleene": "empty APPLY in TRANSFORMATIONS",
+    "beekleene2": "Should be able to build a query with AND then NOT",
+    "beesag": "should be able to build a query with another transformation",
+    "beesteamed": "empty GROUP in TRANSFORMATIONS",
+    "test": "mt apply",
+    "year": "checking courses_year",
+    "rooms": "checking rooms"
+}

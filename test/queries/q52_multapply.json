@@ -1,0 +1,219 @@
+{
+    "title": "q52_multapply",
+    "query": {
+        "WHERE": {
+            "IS": {
+                "courses_instructor": "*mac*"
+            }
+        },
+        "OPTIONS": {
+            "COLUMNS": [
+                "courses_dept",
+                "overallAvg",
+                "maxPass"
+            ],
+            "ORDER": {
+                "dir": "UP",
+                "keys": [
+                    "maxPass",
+                    "courses_dept",
+                    "overallAvg"
+                ]
+            }
+        },
+        "TRANSFORMATIONS": {
+            "GROUP": [
+                "courses_dept"
+            ],
+            "APPLY": [
+                {
+                    "overallAvg": {
+                        "AVG": "courses_avg"
+                    }
+                },
+                {
+                    "maxPass": {
+                        "MAX": "courses_pass"
+                    }
+                }
+            ]
+        }
+    },
+    "response": {
+        "code": 200,
+        "body": {
+            "result": [
+                {
+                    "courses_dept": "obst",
+                    "overallAvg": 81,
+                    "maxPass": 3
+                },
+                {
+                    "courses_dept": "pcth",
+                    "overallAvg": 90.19,
+                    "maxPass": 6
+                },
+                {
+                    "courses_dept": "edcp",
+                    "overallAvg": 91.44,
+                    "maxPass": 18
+                },
+                {
+                    "courses_dept": "visa",
+                    "overallAvg": 81.9,
+                    "maxPass": 20
+                },
+                {
+                    "courses_dept": "biol",
+                    "overallAvg": 55.96,
+                    "maxPass": 21
+                },
+                {
+                    "courses_dept": "ends",
+                    "overallAvg": 78.73,
+                    "maxPass": 24
+                },
+                {
+                    "courses_dept": "path",
+                    "overallAvg": 80.27,
+                    "maxPass": 24
+                },
+                {
+                    "courses_dept": "scie",
+                    "overallAvg": 74.2,
+                    "maxPass": 25
+                },
+                {
+                    "courses_dept": "epse",
+                    "overallAvg": 89.68,
+                    "maxPass": 30
+                },
+                {
+                    "courses_dept": "wrds",
+                    "overallAvg": 70.4,
+                    "maxPass": 30
+                },
+                {
+                    "courses_dept": "audi",
+                    "overallAvg": 93.91,
+                    "maxPass": 33
+                },
+                {
+                    "courses_dept": "isci",
+                    "overallAvg": 85.63,
+                    "maxPass": 33
+                },
+                {
+                    "courses_dept": "baen",
+                    "overallAvg": 79.27,
+                    "maxPass": 39
+                },
+                {
+                    "courses_dept": "hist",
+                    "overallAvg": 73.46,
+                    "maxPass": 39
+                },
+                {
+                    "courses_dept": "bafi",
+                    "overallAvg": 75.54,
+                    "maxPass": 45
+                },
+                {
+                    "courses_dept": "bait",
+                    "overallAvg": 81.34,
+                    "maxPass": 49
+                },
+                {
+                    "courses_dept": "arch",
+                    "overallAvg": 82.51,
+                    "maxPass": 52
+                },
+                {
+                    "courses_dept": "dent",
+                    "overallAvg": 81.77,
+                    "maxPass": 57
+                },
+                {
+                    "courses_dept": "apsc",
+                    "overallAvg": 77.86,
+                    "maxPass": 60
+                },
+                {
+                    "courses_dept": "geog",
+                    "overallAvg": 74.77,
+                    "maxPass": 64
+                },
+                {
+                    "courses_dept": "comm",
+                    "overallAvg": 71.34,
+                    "maxPass": 80
+                },
+                {
+                    "courses_dept": "grsj",
+                    "overallAvg": 78.53,
+                    "maxPass": 89
+                },
+                {
+                    "courses_dept": "psyc",
+                    "overallAvg": 70.79,
+                    "maxPass": 90
+                },
+                {
+                    "courses_dept": "cpsc",
+                    "overallAvg": 81.66,
+                    "maxPass": 93
+                },
+                {
+                    "courses_dept": "bioc",
+                    "overallAvg": 81.24,
+                    "maxPass": 119
+                },
+                {
+                    "courses_dept": "nurs",
+                    "overallAvg": 88.05,
+                    "maxPass": 120
+                },
+                {
+                    "courses_dept": "cogs",
+                    "overallAvg": 66.77,
+                    "maxPass": 122
+                },
+                {
+                    "courses_dept": "mech",
+                    "overallAvg": 75.14,
+                    "maxPass": 129
+                },
+                {
+                    "courses_dept": "engl",
+                    "overallAvg": 73.56,
+                    "maxPass": 136
+                },
+                {
+                    "courses_dept": "phys",
+                    "overallAvg": 82.06,
+                    "maxPass": 162
+                },
+                {
+                    "courses_dept": "math",
+                    "overallAvg": 72.41,
+                    "maxPass": 199
+                },
+                {
+                    "courses_dept": "phrm",
+                    "overallAvg": 84.78,
+                    "maxPass": 213
+                },
+                {
+                    "courses_dept": "chem",
+                    "overallAvg": 73.17,
+                    "maxPass": 222
+                },
+                {
+                    "courses_dept": "phar",
+                    "overallAvg": 77.34,
+                    "maxPass": 222
+                }
+            ]
+        }
+    }
+}

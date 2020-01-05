@@ -1,0 +1,35 @@
+{
+    "title": "SELECT dept, avg WHERE avg > 97",
+    "query": {
+        "WHERE": {
+            "OR": [
+                {"EQ":
+                    {"rooms_lat":49.26372}
+                }
+                ,
+                {"EQ":
+                {"rooms_lon":-123.24959}
+                }
+            ]
+
+        },
+        "OPTIONS": {
+            "COLUMNS": [
+                "rooms_shortname"
+            ],
+            "ORDER": "rooms_shortname"
+        }
+    },
+    "response": {
+        "code": 200,
+        "body": {
+            "result": [
+                { "rooms_shortname": "AERL" },
+                { "rooms_shortname": "FNH" },
+                { "rooms_shortname": "FNH" },
+                { "rooms_shortname": "FNH" },
+                { "rooms_shortname": "FNH" },
+                { "rooms_shortname": "FNH" },
+                { "rooms_shortname": "FNH" }]}
+    }
+}

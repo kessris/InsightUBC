@@ -1,0 +1,34 @@
+{
+    "title": "SELECT dept, avg WHERE avg > 97",
+    "query": {
+        "WHERE": {
+            "HELLO": [
+                {
+                    "IS": {
+                        "courses_uuid":"11135"
+                    }
+                },
+                {
+                    "EQ": {
+                        "courses_avg":50
+                    }
+                }
+            ]
+        },
+        "OPTIONS": {
+            "COLUMNS": [
+                "courses_avg"
+            ],
+            "ORDER": "courses_avg",
+            "FORM": "TABLE"
+        }
+    },
+    "response": {
+        "code": 400,
+        "body": {
+            "result": [
+                { "courses_avg": 50 }
+            ]
+        }
+    }
+}

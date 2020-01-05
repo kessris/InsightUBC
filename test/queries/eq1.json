@@ -1,0 +1,23 @@
+{
+    "title": "Unexpected key",
+    "query": {
+        "WHERE": {
+            "EQ": {
+                "hello_avg":1000
+            }
+        },
+        "OPTIONS": {
+            "COLUMNS": [
+                "courses_avg"
+            ],
+            "ORDER": "courses_avg",
+            "FORM": "TABLE"
+        }
+    },
+    "response": {
+        "code": 400,
+        "body": {
+            "result": []
+        }
+    }
+}

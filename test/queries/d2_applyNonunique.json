@@ -1,0 +1,40 @@
+{
+    "title": "Non-unique applykey",
+    "query": {
+        "WHERE": {
+            "GT": {
+                "courses_year": 2015
+            }
+        },
+        "OPTIONS": {
+            "COLUMNS": [
+                "courses_dept",
+                "overallAvg"
+            ],
+            "ORDER": {"dir": "UP", "keys": ["overallAvg"]}
+        },
+        "TRANSFORMATIONS": {
+            "GROUP": [
+                "courses_dept"
+            ],
+            "APPLY": [
+                {
+                    "overallAvg": {
+                        "AVG": "courses_avg"
+                    }
+                },
+                {
+                    "overallAvg": {
+                        "COUNT": "courses_id"
+                    }
+                }
+            ]
+        }
+    },
+    "response": {
+        "code": 400,
+        "body": {
+            "error": "duplicate apply key"
+        }
+    }
+}

@@ -1,0 +1,38 @@
+{
+    "title": "simple_and",
+    "query": {
+        "WHERE": {
+            "AND": [
+                {
+                    "GT": {
+                        "courses_avg": 90
+                    }
+                },
+                {
+                    "IS": {
+                        "courses_dept": "adhe"
+                    }
+                },
+                {
+                    "IS": {
+                        "courses_id": "*0"
+                    }
+                }
+            ]
+        },
+        "OPTIONS": {
+            "COLUMNS": [
+                "courses_dept",
+                "courses_id",
+                "courses_avg"
+            ],
+            "ORDER": "courses_avg",
+            "FORM": "TABLE"
+        }
+    },
+    "response": {
+        "code": 200,
+        "body":
+                {"result":[{"courses_dept":"adhe","courses_id":"330","courses_avg":90.17},{"courses_dept":"adhe","courses_id":"330","courses_avg":90.5},{"courses_dept":"adhe","courses_id":"330","courses_avg":90.72},{"courses_dept":"adhe","courses_id":"330","courses_avg":90.85},{"courses_dept":"adhe","courses_id":"330","courses_avg":91.29},{"courses_dept":"adhe","courses_id":"330","courses_avg":91.33},{"courses_dept":"adhe","courses_id":"330","courses_avg":91.33},{"courses_dept":"adhe","courses_id":"330","courses_avg":91.48}]}
+    }
+}

@@ -1,0 +1,47 @@
+{
+    "title": "SELECT dept, avg WHERE avg > 97",
+    "query": {
+        "WHERE": {
+            "AND": [
+                {
+                    "IS": {
+                        "rooms_type": "Small Group"
+                    }
+                },
+                {
+                    "IS": {
+                        "rooms_shortname": "SCRF"
+                    }
+                }
+            ]
+        },
+        "OPTIONS": {
+            "COLUMNS": [
+                "rooms_name",
+                "maxSeats"
+            ],
+            "ORDER": {
+                "dir": "DOWN",
+                "keys": [
+                    "maxSeats"
+                ]
+            }
+        },
+        "TRANSFORMATIONS": {
+            "GROUP": [
+                "rooms_name"
+            ],
+            "APPLY": [
+                {
+                    "maxSeats": {
+                        "MAX": "rooms_seats"
+                    }
+                }
+            ]
+        }
+    },
+    "response": {
+        "code": 200,
+        "body": {"result":[{"rooms_name":"SCRF_209","maxSeats":60},{"rooms_name":"SCRF_201","maxSeats":40},{"rooms_name":"SCRF_208","maxSeats":40},{"rooms_name":"SCRF_207","maxSeats":40},{"rooms_name":"SCRF_206","maxSeats":40},{"rooms_name":"SCRF_1005","maxSeats":40},{"rooms_name":"SCRF_1003","maxSeats":40},{"rooms_name":"SCRF_204","maxSeats":40},{"rooms_name":"SCRF_203","maxSeats":40},{"rooms_name":"SCRF_202","maxSeats":40},{"rooms_name":"SCRF_1004","maxSeats":40},{"rooms_name":"SCRF_200","maxSeats":40},{"rooms_name":"SCRF_1328","maxSeats":38},{"rooms_name":"SCRF_205","maxSeats":34},{"rooms_name":"SCRF_204A","maxSeats":24},{"rooms_name":"SCRF_1020","maxSeats":24},{"rooms_name":"SCRF_210","maxSeats":24},{"rooms_name":"SCRF_1024","maxSeats":20},{"rooms_name":"SCRF_1023","maxSeats":20},{"rooms_name":"SCRF_1022","maxSeats":20},{"rooms_name":"SCRF_1021","maxSeats":20}]}
+    }
+}

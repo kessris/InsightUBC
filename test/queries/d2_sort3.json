@@ -1,0 +1,63 @@
+{
+    "title": "courses with transf",
+    "query": {
+        "WHERE": {
+            "GT": {
+                "courses_avg": 98.5
+            }
+        },
+        "OPTIONS": {
+            "COLUMNS": [
+                "courses_avg",
+                "overallAvg"
+            ],
+            "ORDER": {"dir": "DOWN", "keys": ["courses_avg"]}
+        },
+        "TRANSFORMATIONS": {
+            "GROUP": [
+                "courses_avg"
+            ],
+            "APPLY": [
+                {
+                    "overallAvg": {
+                        "AVG": "courses_avg"
+                    }
+                }
+            ]
+        }
+    },
+    "response": {
+        "code": 200,
+        "body": {
+            "result": [
+                {
+                    "courses_avg": 99.78
+                },
+                {
+                    "courses_avg": 99.19
+                },
+                {
+                    "courses_avg": 98.98
+                },
+                {
+                    "courses_avg": 98.8
+                },
+                {
+                    "courses_avg": 98.76
+                },
+                {
+                    "courses_avg": 98.75
+                },
+                {
+                    "courses_avg": 98.71
+                },
+                {
+                    "courses_avg": 98.7
+                },
+                {
+                    "courses_avg": 98.58
+                }
+            ]
+        }
+    }
+}

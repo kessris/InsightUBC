@@ -1,0 +1,39 @@
+{
+    "title": "maxSeat_sort_DOWN",
+    "query": {
+        "WHERE": {
+            "GT": {
+                "rooms_seats": 84
+            }
+        },
+        "OPTIONS": {
+            "COLUMNS": [
+                "rooms_name",
+                "minSeats"
+            ],
+            "ORDER": {
+                "dir": "DOWN",
+                "keys": [
+                    "minSeats",
+                    "rooms_name"
+                ]
+            }
+        },
+        "TRANSFORMATIONS": {
+            "GROUP": [
+                "rooms_name"
+            ],
+            "APPLY": [
+                {
+                    "minSeats": {
+                        "MIN": "rooms_seats"
+                    }
+                }
+            ]
+        }
+    },
+    "response": {
+        "code": 200,
+        "body": {"result":[{"rooms_name":"WOOD_2","minSeats":503},{"rooms_name":"OSBO_A","minSeats":442},{"rooms_name":"CIRS_1250","minSeats":426},{"rooms_name":"HEBB_100","minSeats":375},{"rooms_name":"LSC_1002","minSeats":350},{"rooms_name":"LSC_1001","minSeats":350},{"rooms_name":"ESB_1013","minSeats":350},{"rooms_name":"WESB_100","minSeats":325},{"rooms_name":"SRC_220C","minSeats":299},{"rooms_name":"SRC_220B","minSeats":299},{"rooms_name":"SRC_220A","minSeats":299},{"rooms_name":"SCRF_100","minSeats":280},{"rooms_name":"BUCH_A101","minSeats":275},{"rooms_name":"CHEM_B150","minSeats":265},{"rooms_name":"ANGU_098","minSeats":260},{"rooms_name":"HENN_200","minSeats":257},{"rooms_name":"FSC_1005","minSeats":250},{"rooms_name":"CHEM_B250","minSeats":240},{"rooms_name":"PHRM_1101","minSeats":236},{"rooms_name":"BIOL_2000","minSeats":228},{"rooms_name":"GEOG_100","minSeats":225},{"rooms_name":"MATH_100","minSeats":224},{"rooms_name":"LSK_200","minSeats":205},{"rooms_name":"MCML_166","minSeats":200},{"rooms_name":"CHBE_101","minSeats":200},{"rooms_name":"SWNG_222","minSeats":190},{"rooms_name":"SWNG_221","minSeats":190},{"rooms_name":"SWNG_122","minSeats":188},{"rooms_name":"SWNG_121","minSeats":187},{"rooms_name":"LSK_201","minSeats":183},{"rooms_name":"WOOD_6","minSeats":181},{"rooms_name":"BUCH_A201","minSeats":181},{"rooms_name":"PHRM_1201","minSeats":167},{"rooms_name":"FRDM_153","minSeats":160},{"rooms_name":"DMP_310","minSeats":160},{"rooms_name":"HENN_201","minSeats":155},{"rooms_name":"IBLC_182","minSeats":154},{"rooms_name":"HENN_202","minSeats":150},{"rooms_name":"ESB_1012","minSeats":150},{"rooms_name":"BUCH_A104","minSeats":150},{"rooms_name":"BUCH_A102","minSeats":150},{"rooms_name":"AERL_120","minSeats":144},{"rooms_name":"MCLD_228","minSeats":136},{"rooms_name":"BUCH_A103","minSeats":131},{"rooms_name":"LSC_1003","minSeats":125},{"rooms_name":"MCLD_202","minSeats":123},{"rooms_name":"WOOD_5","minSeats":120},{"rooms_name":"WOOD_4","minSeats":120},{"rooms_name":"WOOD_1","minSeats":120},{"rooms_name":"DMP_110","minSeats":120},{"rooms_name":"CHEM_D300","minSeats":114},{"rooms_name":"CHEM_D200","minSeats":114},{"rooms_name":"IBLC_261","minSeats":112},{"rooms_name":"BUCH_A203","minSeats":108},{"rooms_name":"BUCH_A202","minSeats":108},{"rooms_name":"MATX_1100","minSeats":106},{"rooms_name":"WESB_201","minSeats":102},{"rooms_name":"IONA_301","minSeats":100},{"rooms_name":"GEOG_200","minSeats":100},{"rooms_name":"CEME_1202","minSeats":100},{"rooms_name":"FSC_1221","minSeats":99},{"rooms_name":"FNH_60","minSeats":99},{"rooms_name":"LASR_104","minSeats":94},{"rooms_name":"CHBE_102","minSeats":94},{"rooms_name":"ALRD_105","minSeats":94},{"rooms_name":"CHEM_C126","minSeats":90},{"rooms_name":"CHEM_C124","minSeats":90},{"rooms_name":"ANSO_207","minSeats":90},{"rooms_name":"WOOD_3","minSeats":88}]}
+    }
+}

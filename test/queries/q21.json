@@ -1,0 +1,36 @@
+{
+    "title": "courses_uuid_string",
+    "query": {
+        "WHERE": {
+            "AND": [
+                {
+                    "NOT": {
+                        "GT": {
+                            "courses_avg": 50
+                        }
+                    }
+                },
+                {
+                    "GT": {
+                        "courses_uuid":1234
+                    }
+                }
+            ]
+        },
+        "OPTIONS": {
+            "COLUMNS": [
+                "courses_dept",
+                "courses_avg",
+                "courses_instructor"
+            ],
+            "ORDER": "courses_avg",
+            "FORM": "TABLE"
+        }
+    },
+    "response": {
+        "code":400,
+        "body": {
+            "error": "courses_uuid should be a string"
+        }
+    }
+}

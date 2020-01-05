@@ -1,0 +1,28 @@
+{
+    "title": "q52_hrefwildcard",
+    "query": {
+        "WHERE": {
+            "IS": {
+                "rooms_href": "*DM*"
+            }
+        },
+        "OPTIONS": {
+            "COLUMNS": [
+
+                "rooms_shortname"
+            ]
+        },
+        "TRANSFORMATIONS": {
+            "GROUP": [
+
+                "rooms_shortname"
+            ],
+            "APPLY": []
+        }
+    },
+    "response": {
+        "code": 200,
+        "body":
+                {"result":[{"rooms_shortname":"FRDM"},{"rooms_shortname":"DMP"}]}
+    }
+}

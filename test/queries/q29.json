@@ -1,0 +1,33 @@
+{
+    "title": "courses2",
+    "query": {
+        "WHERE": {
+            "AND":[
+                {
+                    "LT": {
+                        "courses2_avg": "ninety"
+                    }
+                },
+                {
+                    "GT": {
+                        "courses2_avg": "ninety"
+                    }
+                }
+            ]
+        },
+        "OPTIONS": {
+            "COLUMNS": [
+                "courses2_id",
+                "courses_avg"
+            ],
+            "FORM": "TABLE"
+        }
+    },
+    "response": {
+        "code":400,
+        "body": {
+            "error":
+                "no data found"
+        }
+    }
+}

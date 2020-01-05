@@ -1,0 +1,46 @@
+{
+    "title": "nested_and_query",
+    "query": {
+        "WHERE": {
+            "AND": [
+                {
+                    "NOT": {
+                        "AND": [
+                            {
+                                "GT": {
+                                    "courses_avg": 20
+                                }
+                            },
+                            {
+                                "LT": {
+                                    "courses_pass": 100000
+                                }
+                            },
+                            {
+                                "LT": {
+                                    "courses_fail": 100
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "IS": {
+                        "courses_dept": "*c"
+                    }
+                }
+            ]
+        },
+        "OPTIONS": {
+            "COLUMNS": [
+                "courses_avg"
+            ],
+            "ORDER": "courses_avg",
+            "FORM": "TABLE"
+        }
+    },
+    "response": {
+        "code": 200,
+        "body": {"result":[{"courses_avg":67.23},{"courses_avg":67.84},{"courses_avg":68.18},{"courses_avg":68.4},{"courses_avg":68.41},{"courses_avg":68.62},{"courses_avg":68.72},{"courses_avg":69.14},{"courses_avg":69.15},{"courses_avg":69.45},{"courses_avg":69.51},{"courses_avg":71.22},{"courses_avg":72.08},{"courses_avg":72.28},{"courses_avg":72.29},{"courses_avg":72.63},{"courses_avg":73.25},{"courses_avg":73.39},{"courses_avg":74.96},{"courses_avg":75.46}]}
+    }
+}
