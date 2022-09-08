@@ -25,7 +25,7 @@
         "decimal.js": "9.0.1",
         "dotenv": "4.0.0",
         "jsonschema": "1.2.2",
-        "jszip": "3.1.5",
+        "jszip": "3.7.0",
         "karma": "^2.0.0",
         "karma-chai": "^0.1.0",
         "karma-chrome-launcher": "^2.2.0",
